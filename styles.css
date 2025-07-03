@@ -1,0 +1,336 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #666;
+    --accent-color: #8b8b8b;
+    --background-color: #fefefe;
+    --paper-color: #f9f9f9;
+    --border-color: #e5e5e5;
+    --max-width: 800px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+body {
+    font-family:
+        "Satoshi-Regular",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+.nav {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand a {
+    font-family: "Satoshi-Medium", sans-serif;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-menu a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width 0.2s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+.main-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    flex: 1;
+}
+
+.main-content-centered {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero {
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-family: "Satoshi-Medium", sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: "Satoshi-LightItalic", sans-serif;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-description {
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--primary-color);
+}
+
+.hero-description p {
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Image Placeholder */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 400px;
+    background-color: var(--paper-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-family: "Satoshi-Light", sans-serif;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.image-placeholder:hover {
+    background-color: var(--border-color);
+    border-color: var(--accent-color);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: none;
+}
+
+/* Content Sections */
+.content-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.content-section h2 {
+    font-family: "Satoshi-Medium", sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    letter-spacing: -0.01em;
+}
+
+.content-section h3 {
+    font-family: "Satoshi-Medium", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.content-section p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.content-section ul {
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.content-section li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.6;
+}
+
+/* Experience/Certification Items */
+.item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--spacing-sm);
+}
+
+.item-title {
+    font-family: "Satoshi-Medium", sans-serif;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.item-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.item-subtitle {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.item-description {
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-xl);
+}
+
+.footer p {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    .main-content {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .image-placeholder {
+        width: 100 %;
+        height: 100%;
+    }
+
+    .image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+
+    .nav-menu {
+        gap: var(--spacing-sm);
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+    }
+}
