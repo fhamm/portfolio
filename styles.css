@@ -265,6 +265,37 @@ body {
     line-height: 1.6;
 }
 
+/* Credential Links */
+.credential-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-left: var(--spacing-md);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: var(--paper-color);
+}
+
+.credential-link:hover {
+    color: var(--primary-color);
+    background-color: var(--border-color);
+}
+
+.external-link-icon {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.credential-link:hover .external-link-icon {
+    opacity: 1;
+}
+
 /* Footer */
 .footer {
     text-align: center;
